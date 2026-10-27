@@ -39,8 +39,3 @@ class DesktopAgentEnvironment:
         else:
             print("Действие 2: Ожидание/Бездействие")
             am.time.sleep(1)
-
-if __name__ == "__main__":
-    env = DesktopAgentEnvironment()
-    print("Агент готов")
-    env.step()

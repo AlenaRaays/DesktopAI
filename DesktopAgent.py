@@ -29,13 +29,13 @@ class DesktopAgentEnvironment:
         print(f"Выбрано действие ID: {action_id}")
 
         if action_id == 0:
-            am.MouseController.click_pkm()  # Вызов статического метода через класс
+            am.MouseController.click_pkm()
         elif action_id == 1:
             print("Действие 1: Нажатие стрелок для сортировки")
-            am.pag.press('down')
-            am.pag.press('down')
-            am.pag.press('enter')
-            am.pag.press('enter')
+            am.MouseController.down()
+            am.MouseController.down()
+            am.MouseController.enter()
+            am.MouseController.enter()
         else:
             print("Действие 2: Ожидание/Бездействие")
             am.time.sleep(1)

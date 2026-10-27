@@ -1,7 +1,7 @@
 import pyautogui as pag
 import time
 
-pag.PAUSE = 0.5  # Заменили запятую на точку
+pag.PAUSE = 0.5
 pag.FAILSAFE = True
 
 class MouseController:
@@ -17,8 +17,16 @@ class MouseController:
             pag.click(button="left")
 
     @staticmethod
-    def click_pkm(x: int = None, y: int = None):  # Исправлено имя метода
+    def click_pkm(x: int = None, y: int = None):
         if x is not None and y is not None:
             pag.click(x, y, button="right")
         else:
             pag.click(button="right")
+
+    @staticmethod
+    def down():
+        pag.press('down')
+
+    @staticmethod
+    def enter():
+        pag.press('enter')

@@ -22,15 +22,14 @@ class DesktopAgentEnvironment:
         vector = resized.astype(np.float32) / 255.0
         return vector.reshape(1, -1)
     
-    def step (self):
-        state = self.getState_vector() if hasattr(self, 'getState_vector') else self.get_state_vector()
+    def step(self):
+        state = self.get_state_vector()
 
         action_id = self.agent.predict_action(state)
-        print(f"выбрано действие ID: {action_id}")
-
+        print(f"Выбрано действие ID: {action_id}")
 
         if action_id == 0:
-            am.MouseController().click_pkm()
+            am.MouseController.click_pkm()  # Вызов статического метода через класс
         elif action_id == 1:
             print("Действие 1: Нажатие стрелок для сортировки")
             am.pag.press('down')
